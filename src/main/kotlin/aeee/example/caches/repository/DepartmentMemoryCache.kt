@@ -1,6 +1,5 @@
 package aeee.example.caches.repository
 
-import aeee.example.caches.DepartmentCache
 import aeee.example.caches.entity.Department
 import org.springframework.stereotype.Repository
 import javax.annotation.PostConstruct
@@ -17,7 +16,7 @@ class DepartmentMemoryCache(
     fun init() {
         val departments: List<Department> = this.departmentRepository.findAll()
         for(department in departments) {
-            this.departmentMapWithId[department.departmentId] = department
+            this.departmentMapWithId[department.departmentId!!] = department
             this.departmentMapWithCode[department.code] = department
         }
     }

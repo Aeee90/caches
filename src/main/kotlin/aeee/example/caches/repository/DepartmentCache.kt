@@ -1,4 +1,4 @@
-package aeee.example.caches
+package aeee.example.caches.repository
 
 import aeee.example.caches.entity.Department
 

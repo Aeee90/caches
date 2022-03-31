@@ -3,13 +3,15 @@ package aeee.example.caches.entity
 import javax.persistence.*
 
 @Entity
-class Department(
+class Department{
+
     @Id @GeneratedValue(strategy = GenerationType.IDENTITY)
-    var departmentId: Long,
+    var departmentId: Long? = null
+
     @Column(length = 20, nullable = false)
-    var code: String,
+    lateinit var code: String
+
     @Column(length = 100, nullable = false)
-    var name: String,
-) {
+    lateinit var name: String
 
 }

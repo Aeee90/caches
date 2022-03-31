@@ -1,9 +1,8 @@
 spring:
   datasource:
     hikari:
-      jdbc-url: jdbc:h2:tcp://localhost:13388/./chacheexample;
+      jdbc-url: jdbc:h2:tcp://localhost:13388/./chacheexample
       driver-class-name: org.h2.Driver
-    initialization-mode: always
   jpa:
     generate-ddl: true
     defer-datasource-initialization: true
@@ -13,3 +12,9 @@ spring:
     properties:
       hibernate:
         format_sql: true
+  redis:
+    host: localhost
+    port: 6379
+  sql:
+    init:
+      mode: always
