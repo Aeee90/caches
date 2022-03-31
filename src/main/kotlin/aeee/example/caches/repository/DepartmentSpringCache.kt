@@ -9,11 +9,14 @@ class DepartmentSpringCache(
     private val departmentRepository: DepartmentRepository
 ) : DepartmentCache {
 
+
+    @Cacheable(cacheNames = ["example"], key = "#departmentId")
     override fun findById(departmentId: Long): Department? {
-        TODO("Not yet implemented")
+        return this.departmentRepository.findById(departmentId).orElse(null)
     }
 
+    @Cacheable(cacheNames = ["example"], key = "#code")
     override fun findByCode(code: String): Department? {
-        TODO("Not yet implemented")
+        return this.departmentRepository.findByCode(code)
     }
 }

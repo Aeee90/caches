@@ -21,12 +21,12 @@ class RedisConfig(
     @Bean
     fun redisConnectionFactory(): RedisConnectionFactory = LettuceConnectionFactory(redisHost, redisPort)
 
-    @Bean
-     fun redisTemplate(): RedisTemplate<String, Any> {
-         return RedisTemplate<String, Any>().apply {
-             keySerializer = StringRedisSerializer()
-             valueSerializer = GenericJackson2JsonRedisSerializer()
-             setConnectionFactory(redisConnectionFactory())
-         }
-     }
+//    @Bean
+//     fun redisTemplate(): RedisTemplate<String, Any> {
+//         return RedisTemplate<String, Any>().apply {
+//             keySerializer = StringRedisSerializer()
+//             valueSerializer = GenericJackson2JsonRedisSerializer()
+//             setConnectionFactory(redisConnectionFactory())
+//         }
+//     }
 }
